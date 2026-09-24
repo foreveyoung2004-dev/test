@@ -1,0 +1,15 @@
+[Unit]
+Description=Steam + Epic Free Games Telegram Bot (BY)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/free-games-by-bot
+ExecStart=/opt/free-games-by-bot/.venv/bin/python /opt/free-games-by-bot/bot.py
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/free-games-by-bot/.env
+
+[Install]
+WantedBy=multi-user.target
